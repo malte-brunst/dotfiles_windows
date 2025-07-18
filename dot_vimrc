@@ -1,0 +1,183 @@
+" GENERAL VIM SETTINGS
+" --------------------
+
+" Set vim and not vi settings
+set nocompatible
+" Set the location of the viminfo file
+set viminfo+=n~/.vim/viminfo
+" Set the number of lines in the history
+set history=500
+" No annoying sound on errors
+set noerrorbells
+set novisualbell
+" Faster update time
+set updatetime=200
+set timeoutlen=1000
+set ttimeoutlen=50
+" Set default character encoding
+set encoding=utf-8
+
+" EDITING
+" -------
+
+" Enable filetype plugins and indent
+filetype plugin on
+filetype indent on
+" Configure backspace so it acts as it should act
+set backspace=eol,start,indent
+" The h and l keys can move across lines
+set whichwrap+=h,l
+" Use spaces instead of tabs
+set expandtab
+" Set each tabstop to be four spaces wide
+set tabstop=4
+" Set a shift of text to be four spaces wide
+set shiftwidth=4
+" When using backstace at the beginning of a line it will delete a shiftwidth
+" of space
+set smarttab
+" Set incremental search; Vim will already search the file while typing before hitting
+" enter
+set incsearch
+" Set the search to be case insensitive: 'test' and 'Test' will be found;
+" If you however already search with a capital letter it also searches for
+" only 'Test'
+set ignorecase
+set smartcase
+" Highlight all search results right away
+set hlsearch
+" Set encoding to be UTF-8
+set encoding=utf-8
+" Set the path variable to recursively look into subdirectories of the cwd
+set path+=**
+" In Netrw display the files and directories in a tree view
+let g:netrw_liststyle=3
+" Allow deleting non-empty directories with netrw
+let g:netrw_localrmdir='rm -r'
+" Allow modified files when navigating
+set hidden
+" Determine how formatting occurs
+set formatoptions+=tcqnl1j
+" Re-read file from disk automatically
+set autoread
+" A line should end after 88 characters
+set textwidth=88
+" Set the complete menu
+set completeopt=menuone,preview
+" Set the shortmess
+set shortmess+=c
+" Open diffs in a vertical split by default
+set diffopt+=vertical
+
+" DISPLAY
+" ------
+
+" Make sure colors are displayed fully and correctly
+set termguicolors
+set t_Co=256
+set background=dark
+" Always show the top 5 or bottom 5 lines in the file when scrolling
+set scrolloff=5
+" Height of the command bar
+set cmdheight=1
+" Always show the status line
+set laststatus=2
+" Format the status line; Only necessary when no status bar plugin is in use
+set statusline=\ %F%m%r%h\ %w\ \ Line:\ %l\ \ Column:\ %c
+" Turn basic syntax highlighting on
+syntax enable
+" Set absolut and relative line numbers on
+set number
+set relativenumber
+" Show the sign column whenever there is somethin to display
+set signcolumn=auto
+" Show matching brackets when text indicator is over them
+set showmatch
+" How many tenths of a second to blink when matching brackets
+set mat=2
+" Show trailing whitespace and non-breaking spaces
+set listchars=tab:>\ ,trail:~,extends:>,precedes:<,nbsp:+
+set list
+" Set a colorcolumn on all files
+set colorcolumn=88
+" Set command-line editing
+set wildmenu
+set wildchar=<C-n>
+
+" MAPPINGS
+" --------
+
+" Remap jk/kj  to escape key in insert mode
+imap jk <ESC>
+imap kj <ESC>
+" Set your leader key to be the space key
+nnoremap <SPACE> <NOP>
+let mapleader = " "
+" Close buffers
+nmap <leader>c :bd<CR>
+" Open file explorer
+nmap <leader>e :e .<CR>
+" Open file explorer in vertical split
+nmap <leader>ve :Vex<CR>
+" Switch fast between open buffers
+nnoremap <leader>b :ls<CR>:b<Space>
+" Open new file with find faster
+nnoremap <leader>ff :find<Space>
+" Search using vimgrep
+nnoremap <leader>fg :vimgrep /\v
+" Open a buffer in a vertical split
+nnoremap <leader>vb :ls<CR>:vert sb<Space>
+" Quickly remove search highlighting
+nnoremap <leader>h :noh<CR>
+" Switch to the alternative buffer faster
+nnoremap <leader>j <C-^>
+nnoremap <leader>k <C-^>
+" Type a shell command in Vim
+nnoremap <leader>s :!
+" Type a silent shell command in Vim
+nnoremap <leader>s :silent !
+" Change the working directory of the current tab to the current buffer
+nnoremap <leader>cwd :tcd %:p:h<CR>
+" Make Y behave like D,C,... as you expect
+nnoremap Y y$
+" Remap n and N such that the cursor stays centered and does not bounce around
+nnoremap n nzz
+nnoremap N Nzz
+" Remap <C-d> and <C-u> such that the cursor stays centered
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+" In insert mode, make an undo only undo all inserts until the last . , ! ? ;
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ! !<c-g>u
+inoremap ? ?<c-g>u
+inoremap ; ;<c-g>u
+" Use update instead of write
+nnoremap <leader>w :update<CR>
+" Remap jumping to tag
+nnoremap ü <c-]>
+" Use the ESC key in terminal mode to exit terminal insert mode
+tnoremap <esc> <c-\><c-n>
+" Open the quickfix list
+nnoremap <leader>q :copen<cr>
+" Navigate the quickfix list
+nnoremap <leader>cn :cnext<cr>
+nnoremap <leader>cN :cprevious<cr>
+" Open the location list
+nnoremap <leader>l :lopen<cr>
+" Navigate the location list
+nnoremap <leader>ln :lnext<cr>
+nnoremap <leader>lN :lprevious<cr>
+" PLUGIN: fugitive
+nnoremap <leader>g :Git<space>
+
+" AUTOCOMMANDS
+" ------------
+
+" COMMANDS
+" --------
+"
+command ToggleLineNumbers :set number! | set relativenumber!
+
+" COLORS
+" ------

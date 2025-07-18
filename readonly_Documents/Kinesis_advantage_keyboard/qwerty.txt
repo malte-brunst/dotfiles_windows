@@ -1,0 +1,13 @@
+[tab]>[delete]
+[caps]>[escape]
+[F9]>[caps]
+[delete]>[tab]
+{rctrl}{`}>{kp-lwin}
+{rctrl}{l}>{-kp-lwin}{l}{+kp-lwin}
+{ralt}{right}>{-kp-lwin}{right}{+kp-lwin}
+{ralt}{left}>{-kp-lwin}{left}{+kp-lwin}
+{ralt}{up}>{-kp-lwin}{up}{+kp-lwin}
+{ralt}{down}>{-kp-lwin}{down}{+kp-lwin}
+{rctrl}{rshift}{right}>{-kp-lwin}{-kp-lctrl}{right}{+kp-lctrl}{+kp-lwin}
+{rctrl}{rshift}{left}>{-kp-lwin}{-kp-lctrl}{left}{+kp-lctrl}{+kp-lwin}
+{rctrl}{rshift}{delete}>{-kp-lwin}{tab}{+kp-lwin}

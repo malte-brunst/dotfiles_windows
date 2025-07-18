@@ -1,0 +1,19 @@
+{
+    "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/master/schema.asc.json",
+    "Microsoft SQL Server Management Studio": {
+        "floating": [
+            [
+                {
+                    "kind": "Exe",
+                    "id": "Ssms.exe",
+                    "matching_strategy": "Equals"
+                },
+                {
+                    "kind": "Class",
+                    "id": "WindowsForms10.Window.8.app",
+                    "matching_strategy": "StartsWith"
+                }
+            ]
+        ]
+    }
+}
