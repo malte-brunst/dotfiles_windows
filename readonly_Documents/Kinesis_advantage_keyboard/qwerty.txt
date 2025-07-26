@@ -11,3 +11,5 @@
 {rctrl}{rshift}{right}>{-kp-lwin}{-kp-lctrl}{right}{+kp-lctrl}{+kp-lwin}
 {rctrl}{rshift}{left}>{-kp-lwin}{-kp-lctrl}{left}{+kp-lctrl}{+kp-lwin}
 {rctrl}{rshift}{delete}>{-kp-lwin}{tab}{+kp-lwin}
+{ralt}v>{-kp-lwin}v{+kp-lwin}
+{ralt}h>{-kp-lwin}h{+kp-lwin}
