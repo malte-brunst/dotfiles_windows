@@ -20,6 +20,9 @@ Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory
 $Env:KOMOREBI_CONFIG_HOME = "$Env:USERPROFILE\.komorebi"
 $env:KOMOREBI_AHK_EXE = "$env:LOCALAPPDATA\Programs\AutoHotkey\v2\AutoHotkey64.exe"
 
+# Zoxide
+Invoke-Expression (& { (zoxide init powershell | Out-String) })
+
 # Functions
 function GitCloneBareForWorktrees {
     param (
